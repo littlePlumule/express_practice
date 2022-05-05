@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "6b46cf42-6d38-4bdb-9452-03ba0206723d",
+		"name": "posts-heroku-express",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dry-falls-50911.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"dry-falls-50911",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增單筆 posts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"HAHAHA\",\r\n    \"tags\": [\"HAHA\", \"yoyoyo\"],\r\n    \"type\": \"person\",\r\n    \"content\": \"HAHAHAHA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dry-falls-50911.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"dry-falls-50911",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除所有 posts",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://dry-falls-50911.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"dry-falls-50911",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除單筆 posts",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://dry-falls-50911.herokuapp.com/posts/627376d6e342de234f6d385c",
+					"protocol": "https",
+					"host": [
+						"dry-falls-50911",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"627376d6e342de234f6d385c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改單筆 posts",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"hohohoho\",\r\n    \"content\": \"hohohoho\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dry-falls-50911.herokuapp.com/posts/627376d6e342de234f6d385c",
+					"protocol": "https",
+					"host": [
+						"dry-falls-50911",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"627376d6e342de234f6d385c"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
