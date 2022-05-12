@@ -11,4 +11,10 @@ module.exports = {
       message
     }).end();
   },
+  notFound(res) {
+    res.status(404).send({
+      status: 'fail',
+      message: '無此路由'
+    }).end();
+  }
 };

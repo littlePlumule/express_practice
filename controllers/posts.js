@@ -1,11 +1,12 @@
 const Post = require('../models/posts');
-const { success, fail } = require('../service/response');
+const { success, fail, notFound } = require('../service/response');
 
 const posts = {
   async getPosts(req, res) {
     const data = await Post.find();
     success(res, data);
   },
+
   async createdPosts(req, res) {
     try {
       const { body } = req;
@@ -19,10 +20,16 @@ const posts = {
       fail(res, error.message)
     }
   },
+
   async deletePosts(req, res) {
-    await Post.deleteMany({});
-    success(res, []);
+    if (req.originalUrl === '/posts/') {
+      notFound(res);
+    } else {
+      await Post.deleteMany({});
+      success(res, []);
+    }
   },
+
   async deletePost(req, res) {
     const posts = await Post.find();
     const id = req.params.id;
@@ -35,6 +42,7 @@ const posts = {
       fail(res, 'id 不匹配');
     }
   },
+
   async changePost(req, res) {
     try {
       const { body } = req;

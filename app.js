@@ -19,4 +19,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/posts', postsRouter);
 
+app.use(function(req, res, next) {
+  res.status(404).send({
+    status: 'notFound',
+    message: '無此路由'
+  });
+});
+
 module.exports = app;
